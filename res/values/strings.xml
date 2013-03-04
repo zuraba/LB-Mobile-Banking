@@ -12,5 +12,6 @@
     <string name="call">Call Us</string>
     <string name="messages">Messages</string>
     <string name="help">Help</string>
+    <string name="us_flag">USA flag</string>
 
 </resources>
