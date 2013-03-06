@@ -3,8 +3,8 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
+    android:layout_gravity="bottom"
     android:background="@color/light_grey"
-    android:orientation="vertical"
     tools:context=".FirstScreen" >
 
     <TextView
@@ -23,7 +23,8 @@
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
+        android:layout_above="@+id/linearLayout1"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView2"
         android:background="@color/silver" >
@@ -34,43 +35,54 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
             android:background="@drawable/news" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignTop="@+id/button3"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/button3"
             android:background="@drawable/map" />
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true" >
 
         <Button
             android:id="@+id/button5"
+            style="@drawable/bottom_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/bottom_buttons"
             android:fadingEdge="horizontal|vertical"
             android:fitsSystemWindows="false"
             android:freezesText="false"
             android:gravity="bottom|center"
             android:text="@string/home"
             android:textAlignment="gravity"
+            android:textColor="@color/white"
             android:textSize="10sp" />
 
         <Button
             android:id="@+id/button6"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_buttons"
+            android:ellipsize="middle"
             android:gravity="bottom|center"
             android:text="@string/barcode"
             android:textAlignment="gravity"
+            android:textColor="@color/white"
             android:textSize="9sp" />
 
         <Button
@@ -78,9 +90,11 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_gravity="bottom|center"
+            android:background="@drawable/bottom_buttons"
             android:gravity="bottom|center"
             android:text="@string/call"
             android:textAlignment="gravity"
+            android:textColor="@color/white"
             android:textSize="10sp" />
 
         <Button
@@ -88,9 +102,11 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_gravity="bottom|center"
+            android:background="@drawable/bottom_buttons"
             android:gravity="bottom|center"
             android:text="@string/messages"
             android:textAlignment="gravity"
+            android:textColor="@color/white"
             android:textSize="10sp" />
 
         <Button
@@ -98,35 +114,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="bottom|center"
+            android:background="@drawable/bottom_buttons"
             android:gravity="bottom|center"
             android:text="@string/help"
             android:textAlignment="gravity"
+            android:textColor="@color/white"
             android:textSize="10sp" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_alignTop="@+id/button2"
-        android:background="@drawable/login_button"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/signup_button"
-        android:text="@string/sign_up"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -137,82 +132,234 @@
         android:adjustViewBounds="true"
         android:src="@drawable/diagrama_bg" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/textView3"
-        android:layout_marginLeft="26dp"
-        android:layout_toRightOf="@+id/textView3"
-        android:background="@drawable/circle_textview"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
-        android:textIsSelectable="true"
-        android:textSize="13sp" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp" >
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/button2"
-        android:layout_marginRight="14dp"
-        android:background="@drawable/circle_textview"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
-        android:textIsSelectable="true"
-        android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle" />
 
-    <TextView
-        android:id="@+id/textView2"
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/date_today"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageView2" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/usa" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_toRightOf="@+id/imageView1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="  USD - "
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usdrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView13"
+            android:layout_toRightOf="@+id/textView13"
+            android:gravity="right|center_vertical"
+            android:textColor="@color/red"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/usdrate"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
+            android:text="@string/full_report"
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignLeft="@+id/textView3"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="OR"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:layout_above="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1" >
 
-    <TextView
-        android:id="@+id/textView3"
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/signup_button"
+            android:fitsSystemWindows="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginRight="23dp"
+            android:layout_toLeftOf="@+id/textView2"
+            android:background="@drawable/login_button"
+            android:fitsSystemWindows="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="OR"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignTop="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        android:background="@drawable/circle_textview"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
-        android:textIsSelectable="true"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_below="@+id/relativeLayout5"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/relativeLayout6" >
 
-    <TextView
-        android:id="@+id/textView5"
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_textview"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_below="@+id/textView6"
-        android:layout_marginRight="31dp"
-        android:layout_toLeftOf="@+id/textView3"
-        android:background="@drawable/circle_textview"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
-        android:textIsSelectable="true"
-        android:textSize="13sp" />
+        android:layout_alignTop="@+id/relativeLayout7"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/relativeLayout4" >
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_above="@+id/textView6"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_marginLeft="16dp"
-        android:background="@drawable/circle_textview"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
-        android:textIsSelectable="true"
-        android:textSize="10sp" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_textview"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/relativeLayout6"
+        android:layout_marginRight="22dp"
+        android:layout_toLeftOf="@+id/relativeLayout6" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_circle" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_textview"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout7"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/relativeLayout6"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="26dp" >
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_textview"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -17,4 +17,9 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="styleName">
+        <item name="android:background">@color/light_grey</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>

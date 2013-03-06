@@ -9,7 +9,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,6 +17,7 @@ import android.widget.TextView;
 public class FirstScreen extends Activity implements OnClickListener {
 
 	private TextView dateToday, dateYesterday, dateBeforeYesterday, dateTomorrow, dateAfterTomorrow;
+	private TextView dolarRate;
 	private Button loginBtn;
 
 
@@ -34,11 +34,14 @@ public class FirstScreen extends Activity implements OnClickListener {
 		loginBtn = (Button) findViewById(R.id.button1);
 		loginBtn.setOnClickListener(this);
 
-		dateToday = (TextView) findViewById(R.id.textView3);
-		dateYesterday = (TextView) findViewById(R.id.textView5);
-		dateBeforeYesterday = (TextView) findViewById(R.id.textView4);
-		dateTomorrow = (TextView) findViewById(R.id.textView6);
-		dateAfterTomorrow = (TextView) findViewById(R.id.textView7);
+		dateToday = (TextView) findViewById(R.id.textView8);
+		dateYesterday = (TextView) findViewById(R.id.textView9);
+		dateBeforeYesterday = (TextView) findViewById(R.id.textView11);
+		dateTomorrow = (TextView) findViewById(R.id.textView10);
+		dateAfterTomorrow = (TextView) findViewById(R.id.textView12);
+		
+		dolarRate = (TextView) findViewById(R.id.usdrate);
+		dolarRate.setText("1.6767");
 
 		DateFormat dtf = new SimpleDateFormat("dd");
 		Calendar calendar = Calendar.getInstance();
