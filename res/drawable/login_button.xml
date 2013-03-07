@@ -6,6 +6,9 @@
         android:angle="270"
         android:endColor="#992f2f"
         android:startColor="#ef4444" />
+    
+    <stroke android:width="0.3dp"
+        android:color="@color/grey" />
 
     <corners
         android:bottomLeftRadius="10dp"

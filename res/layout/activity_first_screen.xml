@@ -27,29 +27,45 @@
         android:layout_above="@+id/linearLayout1"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imageView2"
-        android:background="@color/silver" >
+        android:background="@color/silver"
+        android:clipChildren="false"
+        android:clipToPadding="false" >
 
-        <Button
-            android:id="@+id/button3"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relativeLayout8"
+            android:layout_alignParentRight="true"
+            android:paddingRight="15dp" >
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/map" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/news" />
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp" >
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/button3"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/button3"
-            android:background="@drawable/map" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/news"
+                android:paddingLeft="10dp" />
+        </RelativeLayout>
+
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -64,10 +80,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_buttons"
-            android:fadingEdge="horizontal|vertical"
-            android:fitsSystemWindows="false"
+            android:fitsSystemWindows="true"
             android:freezesText="false"
-            android:gravity="bottom|center"
+            android:gravity="center"
             android:text="@string/home"
             android:textAlignment="gravity"
             android:textColor="@color/white"
@@ -76,10 +91,11 @@
         <Button
             android:id="@+id/button6"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button5"
             android:background="@drawable/bottom_buttons"
             android:ellipsize="middle"
-            android:gravity="bottom|center"
+            android:gravity="center"
             android:text="@string/barcode"
             android:textAlignment="gravity"
             android:textColor="@color/white"
@@ -88,10 +104,12 @@
         <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="bottom|center"
+            android:layout_toRightOf="@+id/button6"
             android:background="@drawable/bottom_buttons"
-            android:gravity="bottom|center"
+            android:gravity="center"
             android:text="@string/call"
             android:textAlignment="gravity"
             android:textColor="@color/white"
@@ -100,10 +118,12 @@
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="bottom|center"
+            android:layout_toRightOf="@+id/button7"
             android:background="@drawable/bottom_buttons"
-            android:gravity="bottom|center"
+            android:gravity="center"
             android:text="@string/messages"
             android:textAlignment="gravity"
             android:textColor="@color/white"
@@ -112,16 +132,18 @@
         <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="bottom|center"
+            android:layout_toRightOf="@+id/button8"
             android:background="@drawable/bottom_buttons"
-            android:gravity="bottom|center"
+            android:gravity="center"
             android:text="@string/help"
             android:textAlignment="gravity"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -201,10 +223,14 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/usdrate"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="18dp"
+            android:layout_marginRight="20dp"
+            android:drawablePadding="3dp"
+            android:drawableRight="@drawable/arrow_right"
+            android:gravity="center_vertical|center_horizontal"
             android:text="@string/full_report"
             android:textColor="@color/light_grey"
             android:textStyle="bold" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -254,7 +280,6 @@
             android:text="OR"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
-
     </RelativeLayout>
 
     <RelativeLayout
