@@ -113,6 +113,7 @@ public final class R {
         public static final int activity_first_screen=0x7f030002;
         public static final int activity_login_main=0x7f030003;
         public static final int footer_layout=0x7f030004;
+        public static final int setings=0x7f030005;
     }
     public static final class menu {
         public static final int first_screen=0x7f090000;
@@ -123,7 +124,10 @@ public final class R {
         public static final int application=0x7f070005;
         public static final int barcode=0x7f070007;
         public static final int call=0x7f070008;
+        public static final int change_lang=0x7f070016;
+        public static final int eng=0x7f070018;
         public static final int full_report=0x7f07000c;
+        public static final int geo=0x7f070017;
         public static final int hello_world=0x7f070002;
         public static final int help=0x7f07000a;
         public static final int home=0x7f070006;
@@ -135,6 +139,7 @@ public final class R {
         public static final int no=0x7f070014;
         public static final int password=0x7f07000f;
         public static final int remember=0x7f070011;
+        public static final int settings=0x7f070015;
         public static final int sign_up=0x7f070004;
         public static final int type=0x7f070010;
         public static final int us_flag=0x7f07000b;

@@ -1,6 +1,7 @@
 package ge.android.liberty.lbmobinebanking;
 
 import ge.android.liberty.lbmobilebanking.login.LoginMain;
+import ge.android.liberty.setting.Settings;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -30,6 +31,11 @@ public class GeneralOnClickListener implements OnClickListener {
 		}
 		if (v.getId() == R.id.btn_back) {
 			((Activity) context).finish();
+			return;
+		}
+		if(v.getId() == R.id.btnSetting){
+			intent = new Intent(context, Settings.class);
+			context.startActivity(intent);
 			return;
 		}
 	}

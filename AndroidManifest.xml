@@ -28,6 +28,7 @@
         <activity android:name="ge.android.liberty.lbmobilebanking.login.LoginMain"
             android:screenOrientation="portrait">            
         </activity>
+        <activity android:name="ge.android.liberty.setting.Settings"></activity>
     </application>
 
 </manifest>

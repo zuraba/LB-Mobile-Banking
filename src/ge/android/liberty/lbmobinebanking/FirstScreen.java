@@ -25,6 +25,9 @@ public class FirstScreen extends Activity {
 		bar.setDisplayShowCustomEnabled(true);
 		bar.setCustomView(R.layout.action_bar);
 		bar.setDisplayShowHomeEnabled(false);
+		
+		settings = (Button) findViewById(R.id.btnSetting);
+		settings.setOnClickListener(new GeneralOnClickListener(this));
 
 		loginBtn = (Button) findViewById(R.id.button1);
 		loginBtn.setOnClickListener(new GeneralOnClickListener(this));
