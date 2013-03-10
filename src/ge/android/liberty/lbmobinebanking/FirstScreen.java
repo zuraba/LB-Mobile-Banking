@@ -1,25 +1,20 @@
 package ge.android.liberty.lbmobinebanking;
 
-import ge.android.liberty.lbmobilebanking.login.LoginMain;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class FirstScreen extends Activity implements OnClickListener {
+public class FirstScreen extends Activity {
 
-	private TextView dateToday, dateYesterday, dateBeforeYesterday, dateTomorrow, dateAfterTomorrow;
+	private TextView dateToday, dateYesterday, dateBeforeYesterday,
+			dateTomorrow, dateAfterTomorrow;
 	private TextView dolarRate;
-	private Button loginBtn;
-
+	private Button loginBtn, settings;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +22,21 @@ public class FirstScreen extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_first_screen);
 
 		ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.lbheader));
+		bar.setDisplayShowCustomEnabled(true);
+		bar.setCustomView(R.layout.action_bar);
 		bar.setDisplayShowHomeEnabled(false);
-		bar.setDisplayShowTitleEnabled(false);
 
 		loginBtn = (Button) findViewById(R.id.button1);
-		loginBtn.setOnClickListener(this);
+		loginBtn.setOnClickListener(new GeneralOnClickListener(this));
+
+		settings = (Button) findViewById(R.id.btnSetting);
 
 		dateToday = (TextView) findViewById(R.id.textView8);
 		dateYesterday = (TextView) findViewById(R.id.textView9);
 		dateBeforeYesterday = (TextView) findViewById(R.id.textView11);
 		dateTomorrow = (TextView) findViewById(R.id.textView10);
 		dateAfterTomorrow = (TextView) findViewById(R.id.textView12);
-		
+
 		dolarRate = (TextView) findViewById(R.id.usdrate);
 		dolarRate.setText("1.6767");
 
@@ -61,12 +58,4 @@ public class FirstScreen extends Activity implements OnClickListener {
 		dateTomorrow.setText(tomorrow);
 		dateAfterTomorrow.setText(afterTomorrow);
 	}
-
-	@Override
-	public void onClick(View v) {
-		if(v.getId() == R.id.button1){
-			Intent loginIntent = new Intent(this, LoginMain.class);
-			startActivity(loginIntent);
-		}
-	}	
 }

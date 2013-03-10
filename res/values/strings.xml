@@ -14,5 +14,6 @@
     <string name="help">Help</string>
     <string name="us_flag">USA flag</string>
     <string name="full_report">View full report</string>
+    <string name="login_page">Login Page</string>
 
 </resources>
